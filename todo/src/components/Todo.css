@@ -1,7 +1,17 @@
+.Todos {
+  position: relative;
+  font-size: 20px;
+}
+
 .Todo {
   cursor: pointer;
+  margin: 0 10px;
 }
 
 .completed {
   text-decoration: line-through;
+}
+
+.delete {
+  position: absolute;
 }

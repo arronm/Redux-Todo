@@ -4,17 +4,17 @@ const initialState = {
   todos: [
     {
       id: 0,
-      name: 'one',
+      value: 'one',
       completed: false,
     },
     {
       id: 1,
-      name: 'two',
+      value: 'two',
       completed: false,
     },
     {
       id: 2,
-      name: 'three',
+      value: 'three',
       completed: false,
     },
   ],
@@ -29,7 +29,7 @@ export default (state = initialState, action) => {
           ...state.todos,
           {
             id: state.todos.length,
-            name: action.payload,
+            value: action.payload,
             completed: false,
           },
         ],
@@ -39,7 +39,6 @@ export default (state = initialState, action) => {
         ...state,
         todos: state.todos.map(todo => {
           if (todo.id === action.payload) {
-            console.log('we need id', action.payload);
             return {
               ...todo,
               completed: !todo.completed,

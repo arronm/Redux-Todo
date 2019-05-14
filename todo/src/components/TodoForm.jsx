@@ -12,11 +12,11 @@ class TodoForm extends Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault();
-    this.props.addTodo(this.state.todo);
+    this.props.addTodo(this.state.value);
     this.setState(prevState => {
       return {
         ...prevState,
-        todo: '',
+        value: '',
       };
     });
   };
@@ -24,7 +24,7 @@ class TodoForm extends Component {
   handleOnChange = (event) => {
     this.setState({
       ...this.state,
-      todo: event.target.value,
+      value: event.target.value,
     });
   };
 
@@ -32,7 +32,7 @@ class TodoForm extends Component {
     return (
       <div>
         <form onSubmit={this.handleOnSubmit}>
-          <input type="text" value={this.state.todo} onChange={this.handleOnChange} />
+          <input type="text" value={this.state.value} onChange={this.handleOnChange} />
           <input type="submit" value="Submit" />
         </form>
       </div>

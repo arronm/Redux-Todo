@@ -50,7 +50,7 @@ export default (state = initialState, action) => {
     case DELETE_TODO:
       return {
         ...state,
-        payload: action.payload,
+        todos: state.todos.filter(todo => todo.id !== action.payload),
       }
     default:
       return state;

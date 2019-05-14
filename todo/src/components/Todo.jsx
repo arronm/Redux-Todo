@@ -4,7 +4,8 @@ import './Todo.css';
 const Todo = (props) => {
 
   const handleOnClick = () => {
-    props.toggleTodo(props.id);
+    // props.toggleTodo(props.id);
+    props.deleteTodo(props.id);
   }
 
   const toggleClass = props.completed ? 'completed' : '';
@@ -12,6 +13,7 @@ const Todo = (props) => {
   return (
     <div onClick={handleOnClick} className={`Todo ${toggleClass}`}>
       {props.value}
+      <span></span>
     </div>
   );
 }

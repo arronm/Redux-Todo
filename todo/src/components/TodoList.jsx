@@ -1,13 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { toggleTodo } from '../actions';
+import { toggleTodo, deleteTodo } from '../actions';
 import Todo from './Todo';
 
 const TodoList = (props) => {
   return (
     <div className="TodoList">
       {
-        props.todos.map(todo => <Todo key={todo.id} {...todo} toggleTodo={props.toggleTodo} />)
+        props.todos.map(todo => (
+          <Todo
+            key={todo.id}
+            {...todo}
+            toggleTodo={props.toggleTodo}
+            deleteTodo={props.deleteTodo}
+          />
+        ))
       }
     </div>
   );
@@ -19,4 +26,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, { toggleTodo })(TodoList);
+export default connect(mapStateToProps, { toggleTodo, deleteTodo })(TodoList);

@@ -1,7 +1,20 @@
-import { ADD_TODO, TOGGLE_TODO } from '../actions';
+import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from '../actions';
 
 const initialState = {
-  todos: [],
+  todos: [
+    {
+      name: 'one',
+      complete: false,
+    },
+    {
+      name: 'two',
+      complete: false,
+    },
+    {
+      name: 'three',
+      complete: false,
+    },
+  ],
 };
 
 export default (state = initialState, action) => {
@@ -16,7 +29,12 @@ export default (state = initialState, action) => {
         ...state,
         payload: action.payload,
       };
+    case DELETE_TODO:
+      return {
+        ...state,
+        payload: action.payload,
+      }
     default:
       return state;
   }
-}
+};

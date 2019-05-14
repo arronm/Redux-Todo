@@ -18,6 +18,7 @@ const initialState = {
       completed: false,
     },
   ],
+  nextId: 3,
 };
 
 export default (state = initialState, action) => {
@@ -28,11 +29,12 @@ export default (state = initialState, action) => {
         todos: [
           ...state.todos,
           {
-            id: state.todos.length,
+            id: state.nextId,
             value: action.payload,
             completed: false,
           },
         ],
+        nextId: state.nextId + 1,
       };
     case TOGGLE_TODO:
       return {

@@ -1,8 +1,13 @@
 import React from 'react';
 
 const Todo = (props) => {
+
+  const handleOnClick = () => {
+    props.toggleTodo(props.id);
+  }
+
   return (
-    <div>
+    <div onClick={handleOnClick}>
       {props.name}
     </div>
   );

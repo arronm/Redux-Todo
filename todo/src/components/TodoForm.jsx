@@ -11,7 +11,6 @@ class TodoForm extends Component {
   }
 
   handleOnSubmit = (event) => {
-    console.log(this);
     event.preventDefault();
     this.props.addTodo(this.state.todo);
     this.setState(prevState => {

@@ -20,9 +20,16 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO:
+      console.log('oy vey');
       return {
         ...state,
-        payload: action.payload,
+        todos: [
+          ...state.todos,
+          {
+            name: action.payload,
+            completed: false,
+          },
+        ],
       };
     case TOGGLE_TODO:
       return {

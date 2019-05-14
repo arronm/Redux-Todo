@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Todo from './Todo';
 
 const TodoList = (props) => {
@@ -10,5 +11,11 @@ const TodoList = (props) => {
     </div>
   );
 }
- 
-export default TodoList;
+
+const mapStateToProps = (state) => {
+  return {
+    todos: state.todos,
+  };
+}
+
+export default connect(mapStateToProps, {})(TodoList);

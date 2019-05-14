@@ -1,20 +1,15 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import './App.css';
 import TodoList from './components/TodoList';
+import TodoForm from './components/TodoForm';
 
-const App = (props) => {
+const App = () => {
   return (
     <div className="App">
-      <TodoList todos={props.todos} />
+      <TodoForm />
+      <TodoList />
     </div>
   );
 }
- 
-const mapStateToProps = (state) => {
-  return {
-    todos: state.todos,
-  };
-}
 
-export default connect(mapStateToProps, {})(App);
+export default App;
